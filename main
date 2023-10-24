@@ -1,0 +1,108 @@
+import tkinter as tk
+frame=tk.Tk()
+
+display="0"
+answer=0
+op=""
+
+frame.title("random")
+frame.geometry("800x600")
+frame.configure(bg="#1c1c1c")
+frame.resizable(False,False)
+
+def click(num):
+    global display
+    global l_d
+    if display=="0":
+        display=str(num)
+    else:
+        display=(f"{display}{str(num)}")
+    l_d.pack_forget()
+    l_d=tk.Label(frame,background="#1c1c1c",borderwidth=0,foreground="white",text=display,font=("Helvetica",35))
+    l_d.place(x=0,y=60,width=800,height=90)
+
+def clear():
+    global display
+    global l_d
+    global answer
+    global op
+    op=""
+    answer=0
+    display=str(answer)
+    l_d.pack_forget()
+    l_d=tk.Label(frame,background="#1c1c1c",borderwidth=0,foreground="white",text=display,font=("Helvetica",35))
+    l_d.place(x=0,y=60,width=800,height=90)
+
+def equal():
+    global display
+    global l_d
+    if op=="":
+        display=display
+    else:
+        display=str(answer)
+    l_d.pack_forget()
+    l_d=tk.Label(frame,background="#1c1c1c",borderwidth=0,foreground="white",text=display,font=("Helvetica",35))
+    l_d.place(x=0,y=60,width=800,height=90)
+
+def plus():
+    global op
+    global display
+    global answer
+    op="+"
+    if display[-1] not in ["+","-","x","/"]:
+        display=(f"{display}+")
+        answer
+        
+    
+l_d=tk.Label(frame,background="#1c1c1c",borderwidth=0,foreground="white",text=display,font=("Helvetica",35))
+l_d.place(x=0,y=60,width=800,height=90)
+
+b_1=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="1",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(1))
+b_1.place(x=160,y=190,width=100,height=40)
+
+b_2=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="2",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(2))
+b_2.place(x=280,y=190,width=100,height=40)
+
+b_3=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="3",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(3))
+b_3.place(x=400,y=190,width=100,height=40)
+
+b_4=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="4",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(4))
+b_4.place(x=160,y=250,width=100,height=40)
+
+b_5=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="5",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(5))
+b_5.place(x=280,y=250,width=100,height=40)
+
+b_6=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="6",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(6))
+b_6.place(x=400,y=250,width=100,height=40)
+
+b_7=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="7",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(7))
+b_7.place(x=160,y=310,width=100,height=40)
+
+b_8=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="8",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(8))
+b_8.place(x=280,y=310,width=100,height=40)
+
+b_9=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="9",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(9))
+b_9.place(x=400,y=310,width=100,height=40)
+
+b_0=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="0",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:click(0))
+b_0.place(x=280,y=370,width=100,height=40)
+
+b_clear=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="clear",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:clear())
+b_clear.place(x=160,y=370,width=100,height=40)
+
+b_equal=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="=",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white",command=lambda:equal())
+b_equal.place(x=400,y=370,width=100,height=40)
+
+b_plus=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="+",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white")
+b_plus.place(x=520,y=190,width=100,height=40)
+
+b_minus=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="-",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white")
+b_minus.place(x=520,y=250,width=100,height=40)
+
+b_mult=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="x",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white")
+b_mult.place(x=520,y=310,width=100,height=40)
+
+b_div=tk.Button(frame,background="#ff0000",borderwidth=0,foreground="white",text="/",font=("Helvetica",30),activebackground="#8B0000",activeforeground="white")
+b_div.place(x=520,y=370,width=100,height=40)
+
+frame.mainloop
