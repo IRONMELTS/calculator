@@ -52,8 +52,7 @@ def plus():
     if display[-1] not in ["+","-","x","/"]:
         display=(f"{display}+")
         answer
-        
-    
+           
 l_d=tk.Label(frame,background="#1c1c1c",borderwidth=0,foreground="white",text=display,font=("Helvetica",35))
 l_d.place(x=0,y=60,width=800,height=90)
 
